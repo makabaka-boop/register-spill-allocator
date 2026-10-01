@@ -1,0 +1,20 @@
+# 循环例子：i 在回边上循环携带，one 是循环不变量，n 定义后不再使用
+var i 3 r1 r2
+var n 4 r1 r2
+var one 2 r1 r2
+
+block entry
+succ header
+instr -> one
+instr -> i
+instr -> n
+
+block header
+succ body exit
+
+block body
+succ header
+instr i one -> i
+
+block exit
+instr i -> -
